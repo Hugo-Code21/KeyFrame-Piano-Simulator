@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Keyframe // Settings</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <div class="grain"></div>
+      <main class="screen screen--settings" aria-labelledby="settings-title">
+        <header class="topbar">
+          <a class="brand-button" href="index.html">KEY<span>FRAME</span></a>
+          <div class="session-title">
+            <span class="live-pill">configuration</span>
+            <h2 id="settings-title">Settings</h2>
+          </div>
+          <a class="text-button" href="index.html">Done</a>
+        </header>
+        <section class="settings-layout">
+          <div>
+            <p class="eyebrow">03 / instrument config</p>
+            <h2>Make it feel<br /><em>like yours.</em></h2>
+            <p class="settings-intro">
+              Tune the room and choose which computer keys carry your touch.
+            </p>
+          </div>
+          <div class="settings-card">
+            <div class="settings-card-heading">
+              <span class="card-kicker">instrument settings</span
+              ><span class="card-status"><i></i> ready</span>
+            </div>
+            <div class="settings-controls">
+              <section class="setting-group">
+                <div class="setting-title">
+                  <span class="setting-number">01</span>
+                  <div>
+                    <h3>Master volume</h3>
+                    <p>Audio feedback for every pressed note.</p>
+                  </div>
+                  <output id="volume-output">70%</output>
+                </div>
+                <input
+                  id="volume-slider"
+                  type="range"
+                  min="0"
+                  max="100"
+                  value="70"
+                  aria-label="Master volume"
+                />
+              </section>
+              <section class="setting-group">
+                <div class="setting-title">
+                  <span class="setting-number">02</span>
+                  <div>
+                    <h3>Keybind layout</h3>
+                    <p>Click any mapped key, then press a new keyboard key.</p>
+                  </div>
+                </div>
+                <div class="bind-grid" id="bind-grid"></div>
+              </section>
+              <button
+                class="button button--primary save-settings"
+                id="save-settings"
+                type="button"
+              >
+                <span class="button-index">&#10003;</span>Save
+                configuration<span class="button-arrow">&#8594;</span>
+              </button>
+            </div>
+          </div>
+        </section>
+      </main>
+      <div class="toast" id="toast" role="status"></div>
+    </div>
+    <script src="js/settings.js"></script>
+  </body>
+</html>
