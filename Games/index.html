@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#151b24" />
+    <title>Keyframe</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <div class="grain"></div>
+      <main class="screen screen--menu" aria-labelledby="game-title">
+        <div class="menu-orbit" aria-hidden="true"><span></span><span></span><span></span></div>
+        <div class="menu-copy">
+          <p class="eyebrow"><span class="status-dot"></span> original rhythm game / 01</p>
+          <h1 id="game-title">KEY<span>FRAME</span></h1>
+          <p class="lede">Find the beat, hit each lane, and clear five original tracks.</p>
+          <div class="menu-actions">
+            <a class="button button--primary" href="Play.html"><span class="button-index">01</span>Start session<span class="button-arrow">&#8594;</span></a>
+            <a class="button" href="Settings.html"><span class="button-index">02</span>Settings<span class="button-arrow">&#8594;</span></a>
+            <button class="button button--quiet" id="quit-button" type="button"><span class="button-index">03</span>Quit to desktop<span class="button-arrow">&#8594;</span></button>
+          </div>
+          <p class="hint-line">Set your four lane keys and track volume in Settings.</p>
+        </div>
+        <div class="menu-side-note" aria-hidden="true"><span>05</span> levels<br /><span>03</span> difficulties</div>
+      </main>
+      <div class="toast" id="toast" role="status"></div>
+    </div>
+    <script>
+      document.querySelector("#quit-button").addEventListener("click", () => {
+        const toast = document.querySelector("#toast");
+        toast.textContent = "Session paused. The browser window is ready to close.";
+        toast.classList.add("show");
+        window.setTimeout(() => toast.classList.remove("show"), 2200);
+      });
+    </script>
+  </body>
+</html>
